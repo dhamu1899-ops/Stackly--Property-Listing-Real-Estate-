@@ -284,20 +284,25 @@ document.addEventListener('DOMContentLoaded', () => {
   function renderHeaderUserSession() {
     const sessionData = localStorage.getItem('loggedInUser');
     const headerActions = document.querySelector('.header-actions, .nav-auth-buttons');
+    const currentPath = window.location.pathname.toLowerCase();
+    const isDashboardPage = currentPath.includes('dashboard');
 
     if (sessionData) {
-      document.body.classList.add('user-logged-in');
+      if (isDashboardPage) {
+        document.body.classList.add('user-logged-in');
+      }
 
-      if (headerActions) {
+      if (headerActions && isDashboardPage) {
         const user = JSON.parse(sessionData);
         const isAdmin = (user.role || 'client').toLowerCase() === 'admin';
         const dashboardLink = isAdmin ? 'admin-dashboard.html' : 'client-dashboard.html';
         const buttonText = isAdmin ? 'Admin Dashboard' : 'Client Dashboard';
 
-        // Replace Login and Signup with ONLY the role-based Dashboard Button
-        headerActions.innerHTML = `
-          <a href="${dashboardLink}" class="btn btn-solid nav-dash-link">${buttonText}</a>
-        `;
+        // On dashboard pages, show Dashboard button
+        let dashBtn = headerActions.querySelector('.nav-dash-link');
+        if (!dashBtn) {
+          headerActions.innerHTML = `<a href="${dashboardLink}" class="btn btn-solid nav-dash-link">${buttonText}</a>`;
+        }
       }
     } else {
       document.body.classList.remove('user-logged-in');

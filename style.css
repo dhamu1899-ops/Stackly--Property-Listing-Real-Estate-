@@ -297,14 +297,15 @@ button,
 }
 
 .header-container {
-  max-width: 1280px;
+  max-width: 1400px;
   height: 81px;
   margin: 0 auto;
-  padding: 0 32px;
+  padding: 0 24px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   box-sizing: border-box;
+  gap: 16px;
 }
 
 .logo-link {
@@ -321,17 +322,20 @@ button,
 .nav-list {
   display: flex;
   align-items: center;
-  gap: 18px;
+  gap: 14px;
   height: 24px;
+  flex: 1;
+  justify-content: center;
 }
 
 .nav-link {
-  font-size: 14.5px;
+  font-size: 13.5px;
   font-weight: 500;
   color: #344054;
   padding: 2px 0;
   position: relative;
   transition: var(--transition);
+  white-space: nowrap;
 }
 
 .nav-link:hover {
@@ -357,8 +361,9 @@ button,
 .header-actions {
   display: flex;
   align-items: center;
-  gap: 18px;
+  gap: 12px;
   height: 40px;
+  flex-shrink: 0;   /* NEVER let buttons get squeezed off-screen */
 }
 
 .header-actions .btn {
@@ -5470,13 +5475,6 @@ section.reveal-active .service-card:nth-child(n+4) {
 }
 
 /* Navbar User Session Badge & Persistent State */
-body.user-logged-in .header-actions > a[href*="login.html"],
-body.user-logged-in .header-actions > a[href*="signup.html"],
-body.user-logged-in .nav-auth-buttons > a[href*="login.html"],
-body.user-logged-in .nav-auth-buttons > a[href*="signup.html"] {
-  display: none !important;
-}
-
 .user-navbar-session {
   display: flex;
   align-items: center;
@@ -6561,9 +6559,9 @@ body.user-logged-in .nav-auth-buttons > a[href*="signup.html"] {
 }
 
 /* ==========================================================================
-   MOBILE HAMBURGER MENU & ACTIVE LINK HIGHLIGHT (<= 992px)
+   MOBILE FULL-COVER SCREEN OVERLAY MENU
    ========================================================================== */
-@media (max-width: 992px) {
+@media (max-width: 768px) {
   /* FIXED TALLER MAIN SITE HEADER ON MOBILE */
   body {
     padding-top: 76px !important;
