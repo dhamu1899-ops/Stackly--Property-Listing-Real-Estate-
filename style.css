@@ -294,18 +294,18 @@ button,
   border-bottom: 1px solid var(--color-border);
   box-shadow: 0 1px 3px rgba(16, 24, 40, 0.04);
   height: 81px;
+  opacity: 1;
 }
 
 .header-container {
-  max-width: 1400px;
+  max-width: 1280px;
   height: 81px;
   margin: 0 auto;
-  padding: 0 24px;
+  padding: 0 32px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   box-sizing: border-box;
-  gap: 16px;
 }
 
 .logo-link {
@@ -315,21 +315,24 @@ button,
 
 .site-logo {
   width: 130px;
-  height: 37.63px;
+  height: 37.6315803527832px;
   object-fit: contain;
+  opacity: 1;
 }
 
 .nav-list {
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: 18px;
   height: 24px;
-  flex: 1;
+  width: 705.739990234375px;
+  max-width: 705.74px;
   justify-content: center;
+  opacity: 1;
 }
 
 .nav-link {
-  font-size: 13.5px;
+  font-size: 14.5px;
   font-weight: 500;
   color: #344054;
   padding: 2px 0;
@@ -361,9 +364,11 @@ button,
 .header-actions {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 18px;
+  width: 218px;
   height: 40px;
-  flex-shrink: 0;   /* NEVER let buttons get squeezed off-screen */
+  flex-shrink: 0;
+  opacity: 1;
 }
 
 .header-actions .btn {
@@ -1685,7 +1690,7 @@ button,
 }
 
 .featured-insight-card:hover .featured-insight-img {
-  transform: scale(1.03);
+  transform: none !important;
 }
 
 .featured-insight-overlay {
@@ -4548,9 +4553,9 @@ details[open] .faq-chevron {
 }
 
 .quote-icon {
-  font-family: var(--font-serif);
-  font-size: 36px;
-  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   color: var(--color-mint);
   line-height: 1;
   margin-bottom: 0;
@@ -4634,7 +4639,7 @@ details[open] .faq-chevron {
 }
 
 .home-insight-card:hover .home-insight-img {
-  transform: scale(1.04);
+  transform: none !important;
 }
 
 .home-insight-content {
@@ -5353,10 +5358,15 @@ section.reveal-active .service-card:nth-child(n+4) {
 .leader-card:hover,
 .trend-card:hover,
 .service-card:hover,
-.expert-card:hover,
-.home-insight-card:hover {
+.expert-card:hover {
   transform: translateY(-6px) scale(1.01) !important;
   box-shadow: 0 16px 36px -8px rgba(15, 23, 42, 0.12) !important;
+}
+
+.home-insight-card:hover,
+.featured-insight-card:hover {
+  transform: none !important;
+  box-shadow: none !important;
 }
 
 /* Hero section should be immediately visible */
@@ -5463,8 +5473,9 @@ section.reveal-active .service-card:nth-child(n+4) {
 }
 
 .loader-brand-logo {
-  height: 28px;
+  height: 48px;
   width: auto;
+  object-fit: contain;
 }
 
 .loader-text {

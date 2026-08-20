@@ -224,7 +224,7 @@ document.addEventListener('DOMContentLoaded', () => {
       loader.className = 'global-loader-overlay';
       loader.innerHTML = `
         <div class="loader-spinner-ring"></div>
-        <img src="Home.img/logo_stackly_dark.webp" alt="STACKLY Logo" class="loader-brand-logo">
+        <img src="Home.img/logo_stackly_teal.webp" alt="STACKLY Logo" class="loader-brand-logo">
         <p class="loader-text"></p>
       `;
       document.body.appendChild(loader);
@@ -352,7 +352,7 @@ document.addEventListener('DOMContentLoaded', () => {
   renderHeaderUserSession();
 
   /* ==========================================================================
-     INDIVIDUAL FIELD RED ERROR VALIDATION (ALL FIELDS MANDATORY)
+     FORM VALIDATION & DEDICATED SUBMIT HANDLERS (BUGS 001, 002, 003, 004, 005, 006 FIX)
      ========================================================================== */
   const allForms = document.querySelectorAll('form');
 
@@ -360,13 +360,9 @@ document.addEventListener('DOMContentLoaded', () => {
     // Disable default browser tooltips so custom red error styling displays cleanly
     form.setAttribute('novalidate', 'novalidate');
 
-    // Automatically enforce 'required' attribute on EVERY form field
+    // BUG-006 FIX: Attach real-time error clear listeners to form inputs
     const allFormFields = form.querySelectorAll('input, select, textarea');
     allFormFields.forEach(field => {
-      if (field.type !== 'hidden' && field.type !== 'submit' && field.type !== 'button') {
-        field.setAttribute('required', 'required');
-      }
-
       const clearError = () => {
         field.classList.remove('input-error');
         field.style.borderColor = '';
@@ -386,7 +382,8 @@ document.addEventListener('DOMContentLoaded', () => {
       e.preventDefault();
 
       let isValid = true;
-      const fieldsToValidate = form.querySelectorAll('input:not([type="hidden"]):not([type="submit"]):not([type="button"]), select, textarea');
+      // BUG-006 FIX: ONLY validate fields explicitly marked required in HTML
+      const fieldsToValidate = form.querySelectorAll('input[required], select[required], textarea[required], .required-field');
 
       // Clear previous error messages
       form.querySelectorAll('.field-error-text').forEach(el => el.remove());
@@ -401,16 +398,14 @@ document.addEventListener('DOMContentLoaded', () => {
           input.style.borderColor = '#EF4444';
           input.style.backgroundColor = '#FEF2F2';
 
-          // Get field label text or placeholder or fallback
           const formGroup = input.closest('.form-group, .role-selector-group') || input.parentElement;
           let label = formGroup?.querySelector('label, .form-label-uppercase')?.textContent.replace('*', '').trim();
           if (!label) label = input.placeholder || 'This mandatory field';
 
-          // Create individual red error message text
           const errSpan = document.createElement('span');
           errSpan.className = 'field-error-text';
           errSpan.style.cssText = 'color: #EF4444; font-size: 12px; font-weight: 600; margin-top: 5px; display: block; width: 100%; letter-spacing: 0.01em;';
-          errSpan.innerHTML = `⚠️ ${label} is mandatory and cannot be left blank.`;
+          errSpan.innerHTML = `⚠️ ${label} is required and cannot be left blank.`;
 
           if (formGroup) {
             formGroup.appendChild(errSpan);
@@ -425,14 +420,33 @@ document.addEventListener('DOMContentLoaded', () => {
       });
 
       if (!isValid) {
-        showToast('All fields are mandatory. Please complete all highlighted fields.', 'error');
+        showToast('Please complete all required fields highlighted in red.', 'error');
         return;
       }
 
-      const formId = form.id;
-      const isContactPage = window.location.pathname.endsWith('contact.html') || formId === 'contactForm' || formId === 'enquiryForm';
-      const isLoginForm = form.classList.contains('auth-form') || formId === 'loginForm' || window.location.pathname.endsWith('login.html');
-      const isSignupForm = formId === 'signupForm' || window.location.pathname.endsWith('signup.html');
+      // Helper function to render inline green success message
+      const showInlineSuccess = (messageText) => {
+        let successCard = form.querySelector('.form-success-card');
+        if (!successCard) {
+          successCard = document.createElement('div');
+          successCard.className = 'form-success-card';
+          successCard.style.cssText = 'background-color: #D1FAE5; border: 1px solid #059669; color: #065F46; padding: 14px 18px; border-radius: 8px; font-size: 14px; font-weight: 600; margin-bottom: 16px; display: flex; align-items: center; gap: 10px; width: 100%; box-sizing: border-box;';
+          form.insertBefore(successCard, form.firstChild);
+        }
+        successCard.innerHTML = `✓ ${messageText}`;
+      };
+
+      const formId = form.id || '';
+      const path = window.location.pathname.toLowerCase();
+
+      const isLoginForm = form.classList.contains('auth-form') || formId === 'loginForm' || (path.endsWith('login.html') && !formId.includes('forgot'));
+      const isSignupForm = formId === 'signupForm' || path.endsWith('signup.html');
+      const isForgotPasswordForm = formId === 'forgotPasswordForm' || path.endsWith('forgot-password.html');
+      const isContactPage = path.endsWith('contact.html') || formId === 'contactForm' || formId === 'enquiryForm';
+      const isServicesForm = path.endsWith('services.html') || formId.includes('service') || formId.includes('consultation');
+      const isPropertiesForm = path.endsWith('properties.html') || formId.includes('property') || formId.includes('enquiry') || form.classList.contains('quick-request-box') || form.closest('.enquiry-card');
+      const isTestimonialForm = path.endsWith('testimonials.html') || formId.includes('testimonial') || formId.includes('experience');
+      const isDashboardForm = path.includes('dashboard') || formId.includes('Profile') || formId.includes('Settings') || formId.includes('dash');
 
       // 1. Handle Login Form
       if (isLoginForm) {
@@ -464,26 +478,60 @@ document.addEventListener('DOMContentLoaded', () => {
 
         showToast(`Account Registered! Provisioning ${role.toUpperCase()} portal...`, 'success');
         window.triggerGlobalLoading(`Setting up ${role.toUpperCase()} Workspace...`, targetDashboard, 2000);
-      } 
-      // 3. Handle Contact Page / Enquiry Form (Successful Message)
-      else if (isContactPage) {
-        showToast('Thank you! Your enquiry has been successfully submitted.', 'success');
-        
-        // Show inline success message card inside form if container available
-        let successCard = form.querySelector('.form-success-card');
-        if (!successCard) {
-          successCard = document.createElement('div');
-          successCard.className = 'form-success-card';
-          successCard.style.cssText = 'background-color: #D1FAE5; border: 1px solid #059669; color: #065F46; padding: 14px 18px; border-radius: 8px; font-size: 14px; font-weight: 600; margin-bottom: 16px; display: flex; align-items: center; gap: 10px;';
-          form.insertBefore(successCard, form.firstChild);
-        }
-        successCard.innerHTML = `✓ Thank you! Your enquiry has been successfully submitted. Our private client team will contact you within 24 hours.`;
+      }
+      // 3. BUG-001 FIX: Handle Forgot Password Form
+      else if (isForgotPasswordForm) {
+        const email = form.querySelector('input[type="email"]')?.value || 'user@example.com';
+        showInlineSuccess(`Password reset instructions sent to <strong>${email}</strong>. Redirecting to Login...`);
+        showToast('Password reset link sent successfully!', 'success');
+        window.triggerGlobalLoading('Password reset email sent! Returning to Login...', 'login.html', 2000);
+      }
+      // 4. BUG-002 FIX: Handle Service Consultation Form
+      else if (isServicesForm) {
+        showInlineSuccess('Thank you! Your service consultation request has been received. Our team will contact you shortly.');
+        showToast('Consultation request submitted successfully!', 'success');
         form.reset();
-      } 
-      // 4. All Other Forms -> Navigate to 404 Page
+      }
+      // 5. BUG-003 FIX: Handle Property Enquiry Form
+      else if (isPropertiesForm) {
+        showInlineSuccess('Thank you! Your property enquiry has been submitted. A private client advisor will respond within 24 hours.');
+        showToast('Property enquiry submitted successfully!', 'success');
+        form.reset();
+      }
+      // 6. BUG-004 FIX: Handle Testimonial / Experience Form
+      else if (isTestimonialForm) {
+        showInlineSuccess('Thank you! Your experience and testimonial have been received successfully.');
+        showToast('Testimonial submitted successfully!', 'success');
+        form.reset();
+      }
+      // 7. BUG-005 FIX: Handle Client / Admin Dashboard Profile & Settings Forms
+      else if (isDashboardForm) {
+        const nameVal = form.querySelector('input[type="text"], input[placeholder*="Name"]')?.value;
+        const emailVal = form.querySelector('input[type="email"]')?.value;
+        const sessionData = localStorage.getItem('loggedInUser');
+
+        if (sessionData) {
+          const u = JSON.parse(sessionData);
+          if (nameVal) u.name = nameVal;
+          if (emailVal) u.email = emailVal;
+          localStorage.setItem('loggedInUser', JSON.stringify(u));
+          renderHeaderUserSession();
+        }
+
+        showInlineSuccess('Your profile settings and changes have been saved successfully!');
+        showToast('Profile settings saved successfully!', 'success');
+      }
+      // 8. Handle Contact Form
+      else if (isContactPage) {
+        showInlineSuccess('Thank you! Your message has been sent successfully. Our team will contact you shortly.');
+        showToast('Message sent successfully!', 'success');
+        form.reset();
+      }
+      // 9. Generic Safe Fallback for any other form (NEVER ROUTE TO 404.HTML)
       else {
-        showToast('Request Received! Redirecting to page...', 'info');
-        window.triggerGlobalLoading('Processing request...', '404.html', 2000);
+        showInlineSuccess('Form submitted successfully! Thank you.');
+        showToast('Form submitted successfully!', 'success');
+        form.reset();
       }
     });
   });
@@ -584,7 +632,7 @@ document.addEventListener('DOMContentLoaded', () => {
       loader.className = 'global-loader-overlay';
       loader.innerHTML = `
         <div class="loader-spinner-ring"></div>
-        <img src="Home.img/logo_stackly_dark.webp" alt="STACKLY Logo" class="loader-brand-logo">
+        <img src="Home.img/logo_stackly_teal.webp" alt="STACKLY Logo" class="loader-brand-logo">
         <p class="loader-text"></p>
       `;
       document.body.appendChild(loader);
