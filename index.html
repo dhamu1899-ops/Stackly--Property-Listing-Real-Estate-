@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>STACKLY | Luxury Real Estate & Estate Archive</title>
+  <!-- Google Fonts: Playfair Display for serif headings, Plus Jakarta Sans for clean typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ==========================================
+       SECTION 1: SITE HEADER
+       ========================================== -->
+  <header class="site-header">
+    <div class="header-container">
+      <a href="index.html" class="logo-link">
+        <img src="Home.img/logo_stackly_dark.webp" alt="STACKLY Logo" class="site-logo">
+      </a>
+
+      <nav class="main-nav">
+        <ul class="nav-list">
+          <li><a href="index.html" class="nav-link active">Home</a></li>
+          <li><a href="about.html" class="nav-link">About Us</a></li>
+          <li><a href="properties.html" class="nav-link">Properties</a></li>
+          <li><a href="services.html" class="nav-link">Services</a></li>
+          <li><a href="our-team.html" class="nav-link">Our Team</a></li>
+          <li><a href="insights.html" class="nav-link">Insights</a></li>
+          <li><a href="testimonials.html" class="nav-link">Testimonials</a></li>
+          <li><a href="contact.html" class="nav-link">Contact Us</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <a href="login.html" class="btn btn-outline">Login</a>
+        <a href="signup.html" class="btn btn-solid">Sign Up</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ==========================================
+         SECTION 1: HERO BANNER
+         ========================================== -->
+    <section class="hero-section">
+      <div class="hero-overlay"></div>
+      <div class="container">
+        <div class="hero-content">
+          <h1 class="hero-title">Find A Place You'll Love</h1>
+          <p class="hero-subtitle">
+            Discover a curated collection of architectural masterpieces and exclusive properties designed for the discerning few.
+          </p>
+
+          <div class="search-box">
+            <div class="search-input-wrapper">
+              <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#667085" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              </svg>
+              <input type="text" placeholder="Search by location, property type, or architectural style..." class="search-input">
+            </div>
+            <button class="btn btn-search">Search</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SECTION 2: FEATURED PROPERTIES
+         ========================================== -->
+    <section class="featured-section">
+      <div class="container">
+        <div class="featured-header">
+          <div class="featured-title-box">
+            <h2 class="section-title">Featured Properties</h2>
+            <p class="section-subtitle">Exceptional properties newly added to our portfolio.</p>
+          </div>
+          <a href="properties.html" class="view-all-link">
+            View all properties
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </a>
+        </div>
+
+        <div class="properties-grid">
+          <!-- Card 1 -->
+          <div class="property-card">
+            <div class="property-image-wrapper">
+              <img src="Home.img/section2_featured_property_modern_living_room.webp" alt="The Alpine Glass House" class="property-img">
+              <span class="badge badge-new">NEW LISTING</span>
+            </div>
+            <div class="property-details">
+              <div class="property-title-row">
+                <h3 class="property-name">The Alpine Glass House</h3>
+                <button class="favorite-btn" aria-label="Save Property">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#667085" stroke-width="1.8">
+                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                  </svg>
+                </button>
+              </div>
+              <p class="property-location">Aspen, Colorado</p>
+              <div class="property-price">$8,450,000</div>
+              <div class="property-specs">
+                <span class="spec-item">
+                  <img src="Home.img/icon_property_bedroom.webp" alt="Beds" class="spec-icon">
+                  4
+                </span>
+                <span class="spec-item">
+                  <img src="Home.img/icon_property_bathroom.webp" alt="Baths" class="spec-icon">
+                  5
+                </span>
+                <span class="spec-item">
+                  <img src="Home.img/icon_property_area_sqft.webp" alt="Sqft" class="spec-icon">
+                  6,200
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="property-card">
+            <div class="property-image-wrapper">
+              <img src="Home.img/section2_featured_property_skyline_haven.webp" alt="Skyline Ascend Penthouse" class="property-img">
+            </div>
+            <div class="property-details">
+              <div class="property-title-row">
+                <h3 class="property-name">Skyline Ascend Penthouse</h3>
+                <button class="favorite-btn" aria-label="Save Property">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#667085" stroke-width="1.8">
+                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                  </svg>
+                </button>
+              </div>
+              <p class="property-location">Manhattan, New York</p>
+              <div class="property-price">$14,200,000</div>
+              <div class="property-specs">
+                <span class="spec-item">
+                  <img src="Home.img/icon_property_bedroom.webp" alt="Beds" class="spec-icon">
+                  3
+                </span>
+                <span class="spec-item">
+                  <img src="Home.img/icon_property_bathroom.webp" alt="Baths" class="spec-icon">
+                  4.5
+                </span>
+                <span class="spec-item">
+                  <img src="Home.img/icon_property_area_sqft.webp" alt="Sqft" class="spec-icon">
+                  4,100
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="property-card">
+            <div class="property-image-wrapper">
+              <img src="Home.img/section2_featured_property_riverfront_villa.webp" alt="Pacific Minimalist Retreat" class="property-img">
+            </div>
+            <div class="property-details">
+              <div class="property-title-row">
+                <h3 class="property-name">Pacific Minimalist Retreat</h3>
+                <button class="favorite-btn" aria-label="Save Property">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#667085" stroke-width="1.8">
+                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                  </svg>
+                </button>
+              </div>
+              <p class="property-location">Malibu, California</p>
+              <div class="property-price">$22,500,000</div>
+              <div class="property-specs">
+                <span class="spec-item">
+                  <img src="Home.img/icon_property_bedroom.webp" alt="Beds" class="spec-icon">
+                  6
+                </span>
+                <span class="spec-item">
+                  <img src="Home.img/icon_property_bathroom.webp" alt="Baths" class="spec-icon">
+                  7
+                </span>
+                <span class="spec-item">
+                  <img src="Home.img/icon_property_area_sqft.webp" alt="Sqft" class="spec-icon">
+                  8,500
+                </span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SECTION 3: EXPLORE PROPERTY CATEGORIES
+         ========================================== -->
+    <section class="cat-section">
+      <div class="cat-wrapper">
+
+        <div class="cat-header">
+          <h2 class="cat-title">Explore Property Categories</h2>
+          <p class="cat-subtitle">Find a home tailored to your distinct lifestyle.</p>
+        </div>
+
+        <div class="cat-grid">
+          <!-- Penthouses: bedroom interior with floor-to-ceiling windows -->
+          <div class="cat-card">
+            <img src="Home.img/section3_category_townhouse.webp" alt="Penthouses" class="cat-img">
+            <div class="cat-overlay">
+              <h3 class="cat-name">Penthouses</h3>
+            </div>
+          </div>
+
+          <!-- Coastal Retreats: outdoor pool / coastal aerial scene -->
+          <div class="cat-card">
+            <img src="Home.img/section3_category_commercial_property.webp" alt="Coastal Retreats" class="cat-img">
+            <div class="cat-overlay">
+              <h3 class="cat-name">Coastal Retreats</h3>
+            </div>
+          </div>
+
+          <!-- Modern Estates: modern flat-roof white villa exterior -->
+          <div class="cat-card">
+            <img src="Home.img/section3_category_modern_villa.webp" alt="Modern Estates" class="cat-img">
+            <div class="cat-overlay">
+              <h3 class="cat-name">Modern Estates</h3>
+            </div>
+          </div>
+
+          <!-- Historic Homes: Victorian / heritage house with trees -->
+          <div class="cat-card">
+            <img src="Home.img/section3_category_family_home.webp" alt="Historic Homes" class="cat-img">
+            <div class="cat-overlay">
+              <h3 class="cat-name">Historic Homes</h3>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SECTION 4: WHY CHOOSE ESTATE ARCHIVE
+         ========================================== -->
+    <section class="why-choose-section">
+      <div class="container why-choose-container">
+        <div class="why-choose-text">
+          <h2 class="section-title">Why Choose Estate Archive</h2>
+          <p class="section-description">
+            We offer an unparalleled level of expertise, discretion, and market knowledge to discerning buyers and sellers of premium real estate.
+          </p>
+
+          <div class="feature-list">
+            <div class="feature-item">
+              <div class="feature-icon-wrapper">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#067A52" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="5" r="2"></circle>
+                  <path d="M12 7L7 21"></path>
+                  <path d="M12 7l5 14"></path>
+                  <path d="M9 15h6"></path>
+                </svg>
+              </div>
+              <div class="feature-content">
+                <h3 class="feature-title">Architectural Focus</h3>
+                <p class="feature-desc">We curate properties that are masterpieces of design.</p>
+              </div>
+            </div>
+
+            <div class="feature-item">
+              <div class="feature-icon-wrapper">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#067A52" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                  <path d="M9 12l2 2 4-4"></path>
+                </svg>
+              </div>
+              <div class="feature-content">
+                <h3 class="feature-title">Unmatched Discretion</h3>
+                <p class="feature-desc">Absolute confidentiality for high-profile clients.</p>
+              </div>
+            </div>
+
+            <div class="feature-item">
+              <div class="feature-icon-wrapper">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#067A52" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                  <line x1="2" y1="12" x2="22" y2="12"></line>
+                </svg>
+              </div>
+              <div class="feature-content">
+                <h3 class="feature-title">Global Reach</h3>
+                <p class="feature-desc">Connecting buyers and sellers on an international scale.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="why-choose-image-wrapper">
+          <img src="Home.img/section4_why_choose_us_advisor.webp" alt="Real Estate Advisor presenting window listings" class="why-choose-img">
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SECTION 5: OUR FEATURED PROJECTS
+         ========================================== -->
+    <section class="projects-section">
+      <div class="container">
+        <div class="section-header center">
+          <h2 class="section-title">Our Featured Projects</h2>
+          <p class="section-subtitle">Highlighting significant architectural achievements.</p>
+        </div>
+
+        <div class="projects-grid">
+          <div class="project-card">
+            <div class="project-img-wrapper">
+              <img src="Home.img/section5_project_parkside_modern_villa.webp" alt="The Belvedere Restoration" class="project-img">
+            </div>
+            <h3 class="project-title">The Belvedere Restoration</h3>
+            <p class="project-desc">A historic estate meticulously modernized.</p>
+          </div>
+
+          <div class="project-card">
+            <div class="project-img-wrapper">
+              <img src="Home.img/section5_project_grand_sky_view.webp" alt="Oasis Modern Development" class="project-img">
+            </div>
+            <h3 class="project-title">Oasis Modern Development</h3>
+            <p class="project-desc">Setting a new standard for sustainable luxury.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SECTION 6: EXPLORE BY LOCATION
+         ========================================== -->
+    <section class="locations-section">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Explore by Location</h2>
+          <p class="section-subtitle">Discover premium real estate in the world's most sought-after destinations.</p>
+        </div>
+
+        <div class="locations-grid">
+          <!-- Large Feature Card: New York -->
+          <div class="location-card location-large">
+            <img src="Home.img/section6_location_new_york_skyline.webp" alt="New York" class="location-img">
+            <div class="location-overlay">
+              <h3 class="location-name">New York</h3>
+            </div>
+          </div>
+
+          <!-- Right Grid of 4 Locations -->
+          <div class="locations-subgrid">
+            <div class="location-card">
+              <img src="Home.img/section6_location_london_tower_bridge.webp" alt="London" class="location-img">
+              <div class="location-overlay">
+                <h3 class="location-name">London</h3>
+              </div>
+            </div>
+
+            <div class="location-card">
+              <img src="Home.img/section6_location_dubai_burj_al_arab.webp" alt="Dubai" class="location-img">
+              <div class="location-overlay">
+                <h3 class="location-name">Dubai</h3>
+              </div>
+            </div>
+
+            <div class="location-card">
+              <img src="Home.img/section6_location_paris_bridge.webp" alt="Paris" class="location-img">
+              <div class="location-overlay">
+                <h3 class="location-name">Paris</h3>
+              </div>
+            </div>
+
+            <div class="location-card">
+              <img src="Home.img/section6_location_tokyo_night.webp" alt="Tokyo" class="location-img">
+              <div class="location-overlay">
+                <h3 class="location-name">Tokyo</h3>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SECTION 7: HOW WE HELP YOU
+         ========================================== -->
+    <section class="process-section">
+      <div class="container">
+        <div class="section-header center">
+          <h2 class="section-title">How We Help You</h2>
+          <p class="section-subtitle">A streamlined process from discovery to ownership.</p>
+        </div>
+
+        <div class="process-grid">
+          <div class="process-step">
+            <div class="step-number">1</div>
+            <h3 class="step-title">Consultation</h3>
+            <p class="step-desc">Understanding your vision and lifestyle requirements.</p>
+          </div>
+
+          <div class="process-step">
+            <div class="step-number">2</div>
+            <h3 class="step-title">Curation</h3>
+            <p class="step-desc">Selecting properties that align perfectly with your criteria.</p>
+          </div>
+
+          <div class="process-step">
+            <div class="step-number">3</div>
+            <h3 class="step-title">Negotiation</h3>
+            <p class="step-desc">Securing terms with expertise and discretion.</p>
+          </div>
+
+          <div class="process-step">
+            <div class="step-number">4</div>
+            <h3 class="step-title">Closing</h3>
+            <p class="step-desc">Ensuring a seamless transition to your new legacy.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SECTION 8: CLIENT SUCCESS STORIES
+         ========================================== -->
+    <section class="testimonial-section">
+      <div class="testimonial-container">
+        <h2 class="testimonial-heading">Client Success Stories</h2>
+        <div class="quote-icon">99</div>
+        <blockquote class="quote-text">
+          "Estate Archive understood our vision immediately. They didn't just find us a house; they found us an architectural masterpiece that perfectly suits our lifestyle."
+        </blockquote>
+        <div class="quote-author">Eleanor &amp; James R.</div>
+        <div class="quote-location">Purchased in Aspen, CO</div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SECTION 9: LATEST REAL ESTATE INSIGHTS
+         ========================================== -->
+    <section class="home-insights-section">
+      <div class="container">
+        <div class="featured-header">
+          <div class="featured-title-box">
+            <h2 class="section-title">Latest Insights</h2>
+            <p class="section-subtitle">Market reports and design trends.</p>
+          </div>
+          <a href="insights.html" class="view-all-link">
+            Read the blog
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </a>
+        </div>
+
+        <div class="trends-grid">
+          <!-- Insight Card 1 -->
+          <div class="home-insight-card">
+            <div class="home-insight-img-wrapper">
+              <img src="Home.img/section8_insight_future_real_estate_marketing.webp" alt="The Rise of Eco-Luxury Homes" class="home-insight-img">
+            </div>
+            <div class="home-insight-content">
+              <span class="trend-tag">MARKET TRENDS</span>
+              <h3 class="trend-title">The Rise of Eco-Luxury Homes</h3>
+              <p class="trend-desc">How sustainable features are becoming the new standard in premium real estate.</p>
+            </div>
+          </div>
+
+          <!-- Insight Card 2 -->
+          <div class="home-insight-card">
+            <div class="home-insight-img-wrapper">
+              <img src="Home.img/section8_insight_5_steps_buy_home.webp" alt="Minimalism in the Mountains" class="home-insight-img">
+            </div>
+            <div class="home-insight-content">
+              <span class="trend-tag">DESIGN FOCUS</span>
+              <h3 class="trend-title">Minimalism in the Mountains</h3>
+              <p class="trend-desc">Integrating modern design aesthetics with rugged alpine landscapes.</p>
+            </div>
+          </div>
+
+          <!-- Insight Card 3 -->
+          <div class="home-insight-card">
+            <div class="home-insight-img-wrapper">
+              <img src="Home.img/section8_insight_commercial_real_estate.webp" alt="Investing in Coastal California" class="home-insight-img">
+            </div>
+            <div class="home-insight-content">
+              <span class="trend-tag">AREA GUIDE</span>
+              <h3 class="trend-title">Investing in Coastal California</h3>
+              <p class="trend-desc">A comprehensive look at the current market dynamics in premium coastal regions.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SECTION 10: FIND YOUR PROPERTY (CTA BANNER)
+         ========================================== -->
+    <section class="find-property-cta">
+      <div class="cta-container">
+        <h2 class="cta-title">Find Your Property</h2>
+        <p class="cta-subtitle">
+          Begin your journey toward owning an exceptional architectural property. Contact our discreet advisory team today.
+        </p>
+        <div class="cta-actions">
+          <a href="properties.html" class="btn btn-cta-primary">Search Listings</a>
+          <a href="contact.html" class="btn btn-cta-secondary">Schedule Consultation</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==========================================
+       SECTION 11: SITE FOOTER (EXACT RECREATION)
+       ========================================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <!-- Brand Column -->
+        <div class="footer-brand-col">
+          <a href="#" class="footer-logo-link">
+            <img src="Home.img/logo_stackly_teal.webp" alt="STACKLY Logo" class="footer-logo">
+          </a>
+          <p class="footer-brand-desc">
+            Curating exceptional properties for a discerning global clientele. Architectural excellence meets uncompromising service.
+          </p>
+          <div class="footer-socials">
+            <a href="https://facebook.com" target="_blank" rel="noopener" class="social-icon" aria-label="Facebook">
+              <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C20.612 23.027 24 18.062 24 12.073z"/></svg>
+            </a>
+            <a href="https://x.com" target="_blank" rel="noopener" class="social-icon" aria-label="X (Twitter)">
+              <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </a>
+            <a href="https://youtube.com" target="_blank" rel="noopener" class="social-icon" aria-label="YouTube">
+              <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+            </a>
+            <a href="https://instagram.com" target="_blank" rel="noopener" class="social-icon" aria-label="Instagram">
+              <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Navigation Column -->
+        <div class="footer-nav-col">
+          <h4 class="footer-heading">Navigation</h4>
+          <ul class="footer-link-list">
+            <li><a href="#">Properties</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Blog</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact Us Column -->
+        <div class="footer-contact-col">
+          <h4 class="footer-heading">CONTACT US</h4>
+          <ul class="footer-contact-list">
+            <li>
+              <svg class="contact-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              <span>contact@estatearchive.com</span>
+            </li>
+            <li>
+              <svg class="contact-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              <span>+1 234 567 890</span>
+            </li>
+            <li>
+              <svg class="contact-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <span>123 Luxury Lane, New York, NY</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Legal Column -->
+        <div class="footer-legal-col">
+          <h4 class="footer-heading">Legal</h4>
+          <ul class="footer-link-list">
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom-bar">
+      <p>&copy; 2024 Estate Archive. All rights reserved. Precise architectural excellence.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Properties | STACKLY - Curated Luxury Real Estate</title>
+  <!-- Google Fonts: Playfair Display for serif headings, Plus Jakarta Sans for clean typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ==========================================
+       SITE HEADER (PROPERTIES ACTIVE)
+       ========================================== -->
+  <header class="site-header">
+    <div class="header-container">
+      <a href="index.html" class="logo-link">
+        <img src="Home.img/logo_stackly_dark.webp" alt="STACKLY Logo" class="site-logo">
+      </a>
+
+      <nav class="main-nav">
+        <ul class="nav-list">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="about.html" class="nav-link">About Us</a></li>
+          <li><a href="properties.html" class="nav-link active">Properties</a></li>
+          <li><a href="services.html" class="nav-link">Services</a></li>
+          <li><a href="our-team.html" class="nav-link">Our Team</a></li>
+          <li><a href="insights.html" class="nav-link">Insights</a></li>
+          <li><a href="testimonials.html" class="nav-link">Testimonials</a></li>
+          <li><a href="contact.html" class="nav-link">Contact Us</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <a href="login.html" class="btn btn-outline">Login</a>
+        <a href="signup.html" class="btn btn-solid">Sign Up</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ==========================================
+         SECTION 1: SEARCH & FILTER HERO
+         ========================================== -->
+    <section class="properties-search-section">
+      <div class="container">
+        <div class="section-header center">
+          <h1 class="properties-main-title">Find Your Next Property</h1>
+        </div>
+
+        <div class="properties-filter-card">
+          <div class="filter-inputs-row">
+            <div class="filter-input-group">
+              <input type="text" placeholder="Location, Neighborhood..." class="filter-input">
+            </div>
+
+            <div class="filter-input-group">
+              <select class="filter-select">
+                <option value="">Property Type</option>
+                <option value="penthouse">Penthouse</option>
+                <option value="villa">Luxury Villa</option>
+                <option value="townhouse">Townhouse</option>
+                <option value="commercial">Commercial Space</option>
+              </select>
+            </div>
+
+            <div class="filter-input-group">
+              <select class="filter-select">
+                <option value="">Price Range</option>
+                <option value="1m-5m">$1,000,000 - $5,000,000</option>
+                <option value="5m-10m">$5,000,000 - $10,000,000</option>
+                <option value="10m-20m">$10,000,000 - $20,000,000</option>
+                <option value="20m+">$20,000,000+</option>
+              </select>
+            </div>
+
+            <button class="btn btn-search-properties">Search Properties</button>
+          </div>
+
+          <div class="filter-options-row">
+            <div class="filter-checkboxes">
+              <label class="checkbox-label">
+                <input type="checkbox" checked class="checkbox-input">
+                <span>For Sale</span>
+              </label>
+              <label class="checkbox-label">
+                <input type="checkbox" class="checkbox-input">
+                <span>For Rent</span>
+              </label>
+            </div>
+
+            <a href="#" class="advanced-filters-link">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="4" y1="21" x2="4" y2="14"></line>
+                <line x1="4" y1="10" x2="4" y2="3"></line>
+                <line x1="12" y1="21" x2="12" y2="12"></line>
+                <line x1="12" y1="8" x2="12" y2="3"></line>
+                <line x1="20" y1="21" x2="20" y2="16"></line>
+                <line x1="20" y1="12" x2="20" y2="3"></line>
+                <line x1="1" y1="14" x2="7" y2="14"></line>
+                <line x1="9" y1="8" x2="15" y2="8"></line>
+                <line x1="17" y1="16" x2="23" y2="16"></line>
+              </svg>
+              Advanced Filters
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SECTION 2: FEATURED PROPERTIES
+         ========================================== -->
+    <section class="featured-section">
+      <div class="container">
+        <div class="featured-header">
+          <div class="featured-title-box">
+            <h2 class="section-title">Featured Properties</h2>
+            <p class="section-subtitle">Exceptional properties newly added to our portfolio.</p>
+          </div>
+          <a href="#" class="view-all-link">
+            View all properties
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </a>
+        </div>
+
+        <div class="properties-grid">
+          <!-- Card 1 -->
+          <div class="property-card">
+            <div class="property-image-wrapper">
+              <img src="Properties.img/section2_featured_property_modern_glass_house.webp" alt="The Alpine Glass House" class="property-img">
+              <span class="badge badge-new">NEW LISTING</span>
+            </div>
+            <div class="property-details">
+              <div class="property-title-row">
+                <h3 class="property-name">The Alpine Glass House</h3>
+                <button class="favorite-btn" aria-label="Save Property">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#667085" stroke-width="1.8">
+                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                  </svg>
+                </button>
+              </div>
+              <p class="property-location">Aspen, Colorado</p>
+              <div class="property-price">$8,450,000</div>
+              <div class="property-specs">
+                <span class="spec-item">
+                  <img src="Properties.img/icon_property_bedroom.webp" alt="Beds" class="spec-icon">
+                  4
+                </span>
+                <span class="spec-item">
+                  <img src="Properties.img/icon_property_bathroom.webp" alt="Baths" class="spec-icon">
+                  5
+                </span>
+                <span class="spec-item">
+                  <img src="Properties.img/icon_property_area_sqft.webp" alt="Sqft" class="spec-icon">
+                  6,200
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="property-card">
+            <div class="property-image-wrapper">
+              <img src="Properties.img/section2_featured_property_skyline_ascent.webp" alt="Skyline Ascend Penthouse" class="property-img">
+            </div>
+            <div class="property-details">
+              <div class="property-title-row">
+                <h3 class="property-name">Skyline Ascend Penthouse</h3>
+                <button class="favorite-btn" aria-label="Save Property">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#667085" stroke-width="1.8">
+                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                  </svg>
+                </button>
+              </div>
+              <p class="property-location">Manhattan, New York</p>
+              <div class="property-price">$14,200,000</div>
+              <div class="property-specs">
+                <span class="spec-item">
+                  <img src="Properties.img/icon_property_bedroom.webp" alt="Beds" class="spec-icon">
+                  3
+                </span>
+                <span class="spec-item">
+                  <img src="Properties.img/icon_property_bathroom.webp" alt="Baths" class="spec-icon">
+                  4.5
+                </span>
+                <span class="spec-item">
+                  <img src="Properties.img/icon_property_area_sqft.webp" alt="Sqft" class="spec-icon">
+                  4,100
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="property-card">
+            <div class="property-image-wrapper">
+              <img src="Properties.img/section2_featured_property_pacific_minimalist.webp" alt="Pacific Minimalist Retreat" class="property-img">
+            </div>
+            <div class="property-details">
+              <div class="property-title-row">
+                <h3 class="property-name">Pacific Minimalist Retreat</h3>
+                <button class="favorite-btn" aria-label="Save Property">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#667085" stroke-width="1.8">
+                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                  </svg>
+                </button>
+              </div>
+              <p class="property-location">Malibu, California</p>
+              <div class="property-price">$22,500,000</div>
+              <div class="property-specs">
+                <span class="spec-item">
+                  <img src="Properties.img/icon_property_bedroom.webp" alt="Beds" class="spec-icon">
+                  6
+                </span>
+                <span class="spec-item">
+                  <img src="Properties.img/icon_property_bathroom.webp" alt="Baths" class="spec-icon">
+                  7
+                </span>
+                <span class="spec-item">
+                  <img src="Properties.img/icon_property_area_sqft.webp" alt="Sqft" class="spec-icon">
+                  8,500
+                </span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SECTION 3: RESIDENTIAL PROPERTIES
+         ========================================== -->
+    <section class="category-listings-section">
+      <div class="container">
+        <div class="featured-header">
+          <div class="featured-title-box">
+            <h2 class="section-title">Residential Properties</h2>
+            <p class="section-subtitle">High-end homes for sophisticated living.</p>
+          </div>
+          <a href="#" class="view-all-link">
+            Explore residential
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </a>
+        </div>
+
+        <div class="properties-grid">
+          <div class="property-card">
+            <div class="property-image-wrapper">
+              <img src="Properties.img/section3_residential_suburban_estate.webp" alt="Suburban Estate" class="property-img">
+            </div>
+            <div class="property-details">
+              <h3 class="property-name">Suburban Estate</h3>
+              <p class="property-location">Westchester, NY</p>
+              <div class="property-price">$4,200,000</div>
+            </div>
+          </div>
+
+          <div class="property-card">
+            <div class="property-image-wrapper">
+              <img src="Properties.img/section3_residential_modern_townhouse.webp" alt="Modern Townhouse" class="property-img">
+            </div>
+            <div class="property-details">
+              <h3 class="property-name">Modern Townhouse</h3>
+              <p class="property-location">London, UK</p>
+              <div class="property-price">&pound;3,800,000</div>
+            </div>
+          </div>
+
+          <div class="property-card">
+            <div class="property-image-wrapper">
+              <img src="Properties.img/section3_residential_country_manor.webp" alt="Country Manor" class="property-img">
+            </div>
+            <div class="property-details">
+              <h3 class="property-name">Country Manor</h3>
+              <p class="property-location">Cotswolds, UK</p>
+              <div class="property-price">&pound;5,500,000</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SECTION 4: COMMERCIAL SPACES
+         ========================================== -->
+    <section class="category-listings-section bg-light">
+      <div class="container">
+        <div class="featured-header">
+          <div class="featured-title-box">
+            <h2 class="section-title">Commercial Spaces</h2>
+            <p class="section-subtitle">Premium retail and business environments.</p>
+          </div>
+          <a href="#" class="view-all-link">
+            Explore commercial
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </a>
+        </div>
+
+        <div class="properties-grid">
+          <div class="property-card">
+            <div class="property-image-wrapper">
+              <img src="Properties.img/section4_commercial_executive_office.webp" alt="Downtown Office" class="property-img">
+            </div>
+            <div class="property-details">
+              <h3 class="property-name">Downtown Office</h3>
+              <p class="property-location">Chicago, IL</p>
+            </div>
+          </div>
+
+          <div class="property-card">
+            <div class="property-image-wrapper">
+              <img src="Properties.img/section4_commercial_retail_showroom.webp" alt="Boutique Retail" class="property-img">
+            </div>
+            <div class="property-details">
+              <h3 class="property-name">Boutique Retail</h3>
+              <p class="property-location">Paris, France</p>
+            </div>
+          </div>
+
+          <div class="property-card">
+            <div class="property-image-wrapper">
+              <img src="Properties.img/section4_commercial_modern_loft.webp" alt="Creative Loft" class="property-img">
+            </div>
+            <div class="property-details">
+              <h3 class="property-name">Creative Loft</h3>
+              <p class="property-location">Berlin, Germany</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SECTION 5: THE LUXURY COLLECTION (DARK NAVY)
+         ========================================== -->
+    <section class="luxury-collection-section">
+      <div class="container">
+        <div class="section-header center">
+          <h2 class="luxury-title">The Luxury Collection</h2>
+          <p class="luxury-subtitle">Highlighting the most exclusive architectural masterpieces globally.</p>
+        </div>
+
+        <div class="luxury-grid">
+          <div class="luxury-card">
+            <img src="Properties.img/section5_luxury_villa_serenita.webp" alt="Villa Paradiso" class="luxury-img">
+            <div class="luxury-overlay">
+              <h3 class="luxury-name">Villa Paradiso</h3>
+              <div class="luxury-price">$45,000,000</div>
+            </div>
+          </div>
+
+          <div class="luxury-card">
+            <img src="Properties.img/section5_luxury_grand_peak_residence.webp" alt="Château Luminesce" class="luxury-img">
+            <div class="luxury-overlay">
+              <h3 class="luxury-name">Château Luminesce</h3>
+              <div class="luxury-price">&euro;38,000,000</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SECTION 6: PROPERTIES FOR SALE & RENT
+         ========================================== -->
+    <section class="sale-rent-section">
+      <div class="container">
+        <div class="sale-rent-grid">
+          <!-- Sale Column -->
+          <div class="sale-rent-col">
+            <div class="col-header">
+              <h3 class="col-title">Properties for Sale</h3>
+              <span class="col-underline"></span>
+            </div>
+
+            <div class="list-item">
+              <img src="Properties.img/section6_sale_modernist_villa.webp" alt="Modernist Cube" class="list-item-img">
+              <div class="list-item-info">
+                <h4 class="list-item-title">Modernist Cube</h4>
+                <p class="list-item-location">Seattle, WA</p>
+                <div class="list-item-price">$2,100,000</div>
+              </div>
+            </div>
+
+            <div class="list-item">
+              <img src="Properties.img/section6_sale_historic_townhouse.webp" alt="Historic Brownstone" class="list-item-img">
+              <div class="list-item-info">
+                <h4 class="list-item-title">Historic Brownstone</h4>
+                <p class="list-item-location">Boston, MA</p>
+                <div class="list-item-price">$3,450,000</div>
+              </div>
+            </div>
+
+            <a href="#" class="view-category-link">View all for sale</a>
+          </div>
+
+          <!-- Rent Column -->
+          <div class="sale-rent-col">
+            <div class="col-header">
+              <h3 class="col-title">Properties for Rent</h3>
+              <span class="col-underline"></span>
+            </div>
+
+            <div class="list-item">
+              <img src="Properties.img/section7_rent_coastal_villa.webp" alt="Executive Penthouse" class="list-item-img">
+              <div class="list-item-info">
+                <h4 class="list-item-title">Executive Penthouse</h4>
+                <p class="list-item-location">Toronto, ON</p>
+                <div class="list-item-price">$12,000 / mo</div>
+              </div>
+            </div>
+
+            <div class="list-item">
+              <img src="Properties.img/section7_rent_central_villa.webp" alt="Coastal Villa" class="list-item-img">
+              <div class="list-item-info">
+                <h4 class="list-item-title">Coastal Villa</h4>
+                <p class="list-item-location">Miami, FL</p>
+                <div class="list-item-price">$25,000 / mo</div>
+              </div>
+            </div>
+
+            <a href="#" class="view-category-link">View all for rent</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SECTION 7: NEWLY LISTED
+         ========================================== -->
+    <section class="newly-listed-section bg-light">
+      <div class="container">
+        <div class="section-header center">
+          <span class="subheading-dark">Newly Listed</span>
+          <p class="section-subtitle">The latest additions to our exclusive portfolio.</p>
+        </div>
+
+        <div class="newly-grid">
+          <div class="newly-card">
+            <div class="newly-img-wrapper">
+              <img src="Properties.img/section8_newly_listed_ocean_suite.webp" alt="Desert Oasis" class="newly-img">
+            </div>
+            <div class="newly-details">
+              <h4 class="newly-title">Desert Oasis</h4>
+              <p class="newly-location">Scottsdale, AZ</p>
+              <div class="newly-price">$3,150,000</div>
+            </div>
+          </div>
+
+          <div class="newly-card">
+            <div class="newly-img-wrapper">
+              <img src="Properties.img/section8_newly_listed_urban_loft.webp" alt="Urban Loft" class="newly-img">
+            </div>
+            <div class="newly-details">
+              <h4 class="newly-title">Urban Loft</h4>
+              <p class="newly-location">Austin, TX</p>
+              <div class="newly-price">$1,850,000</div>
+            </div>
+          </div>
+
+          <div class="newly-card">
+            <div class="newly-img-wrapper">
+              <img src="Properties.img/section8_newly_listed_lakeside_cabin.webp" alt="Lakefront Cabin" class="newly-img">
+            </div>
+            <div class="newly-details">
+              <h4 class="newly-title">Lakefront Cabin</h4>
+              <p class="newly-location">Tahoe, NV</p>
+              <div class="newly-price">$4,900,000</div>
+            </div>
+          </div>
+
+          <div class="newly-card action-card">
+            <a href="#" class="view-all-new-link">View All New</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SECTION 8: ENQUIRY FORM
+         ========================================== -->
+    <section class="enquiry-section">
+      <div class="container">
+        <div class="enquiry-card">
+          <h2 class="enquiry-title">Can't Find What You're Looking For?</h2>
+          <p class="enquiry-subtitle">
+            Our expert advisors are ready to help you discover off-market opportunities and schedule private viewings.
+          </p>
+
+          <form class="enquiry-form" onsubmit="event.preventDefault();">
+            <div class="form-row two-col">
+              <div class="form-group">
+                <label class="form-label">First Name</label>
+                <input type="text" class="form-input">
+              </div>
+              <div class="form-group">
+                <label class="form-label">Last Name</label>
+                <input type="text" class="form-input">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Email Address</label>
+              <input type="email" class="form-input">
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Message or Property Preferences</label>
+              <textarea class="form-textarea" rows="4"></textarea>
+            </div>
+
+            <div class="form-submit-row">
+              <button type="submit" class="btn btn-submit-enquiry">Submit Enquiry</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==========================================
+       MASTER SITE FOOTER
+       ========================================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand-col">
+          <a href="index.html" class="footer-logo-link">
+            <img src="Home.img/logo_stackly_teal.webp" alt="STACKLY Logo" class="footer-logo">
+          </a>
+          <p class="footer-brand-desc">
+            Curating exceptional properties for a discerning global clientele. Architectural excellence meets uncompromising service.
+          </p>
+          <div class="footer-socials">
+            <a href="https://facebook.com" target="_blank" rel="noopener" class="social-icon" aria-label="Facebook">
+              <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C20.612 23.027 24 18.062 24 12.073z"/></svg>
+            </a>
+            <a href="https://x.com" target="_blank" rel="noopener" class="social-icon" aria-label="X (Twitter)">
+              <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </a>
+            <a href="https://youtube.com" target="_blank" rel="noopener" class="social-icon" aria-label="YouTube">
+              <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+            </a>
+            <a href="https://instagram.com" target="_blank" rel="noopener" class="social-icon" aria-label="Instagram">
+              <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-nav-col">
+          <h4 class="footer-heading">Navigation</h4>
+          <ul class="footer-link-list">
+            <li><a href="properties.html">Properties</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="#">Blog</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-contact-col">
+          <h4 class="footer-heading">CONTACT US</h4>
+          <ul class="footer-contact-list">
+            <li>
+              <svg class="contact-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              <span>contact@estatearchive.com</span>
+            </li>
+            <li>
+              <svg class="contact-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              <span>+1 234 567 890</span>
+            </li>
+            <li>
+              <svg class="contact-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <span>123 Luxury Lane, New York, NY</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="footer-legal-col">
+          <h4 class="footer-heading">Legal</h4>
+          <ul class="footer-link-list">
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom-bar">
+      <p>&copy; 2024 Estate Archive. All rights reserved. Precise architectural excellence.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

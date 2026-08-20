@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Control Center | STACKLY Luxury Estates</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="dashboard-body">
+
+  <div class="dashboard-wrapper">
+    <!-- LEFT SIDEBAR NAVIGATION -->
+    <aside class="dashboard-sidebar">
+      <div class="sidebar-header">
+        <a href="index.html" class="brand-logo-link">
+          <img src="Home.img/logo_stackly_dark.webp" alt="STACKLY Logo" class="brand-logo logo-white">
+        </a>
+        <span class="sidebar-role-badge badge-gold">👑 ADMIN CONSOLE</span>
+      </div>
+
+      <!-- User Profile Card -->
+      <div class="sidebar-user-card">
+        <div class="user-avatar-circle admin-avatar">A</div>
+        <div class="user-meta">
+          <h4 class="user-name" id="sidebarUserName">Dhamu (Admin)</h4>
+          <span class="user-email" id="sidebarUserEmail">dhau@gmail.com</span>
+        </div>
+      </div>
+
+      <!-- Sidebar Navigation Menu Items -->
+      <nav class="sidebar-nav">
+        <span class="sidebar-nav-group-title">ADMIN MANAGEMENT</span>
+        <button type="button" class="sidebar-nav-item admin-tab-link active" data-target="admin-tab-overview">
+          <span class="nav-icon">📈</span> System Overview
+        </button>
+        <button type="button" class="sidebar-nav-item admin-tab-link" data-target="admin-tab-portfolio">
+          <span class="nav-icon">🏢</span> Portfolio Management <span class="nav-count">48</span>
+        </button>
+        <button type="button" class="sidebar-nav-item admin-tab-link" data-target="admin-tab-leads">
+          <span class="nav-icon">👥</span> Lead CRM &amp; Inquiries <span class="nav-count badge-green">12</span>
+        </button>
+
+        <span class="sidebar-nav-group-title margin-top-sm">TEAM &amp; FINANCIALS</span>
+        <button type="button" class="sidebar-nav-item admin-tab-link" data-target="admin-tab-advisors">
+          <span class="nav-icon">👨‍💼</span> Advisor Roster <span class="nav-count">16</span>
+        </button>
+        <button type="button" class="sidebar-nav-item admin-tab-link" data-target="admin-tab-financials">
+          <span class="nav-icon">💳</span> Escrow Ledger
+        </button>
+
+        <span class="sidebar-nav-group-title margin-top-sm">PLATFORM CONTROLS</span>
+        <button type="button" class="sidebar-nav-item admin-tab-link" data-target="admin-tab-settings">
+          <span class="nav-icon">⚙️</span> System Settings
+        </button>
+      </nav>
+
+      <!-- Sidebar Footer Controls -->
+      <div class="sidebar-footer">
+        <a href="index.html" class="btn btn-outline full-width margin-bottom-sm">Exit to Website</a>
+        <button type="button" class="btn btn-solid full-width btn-logout-dash">Logout</button>
+      </div>
+    </aside>
+
+    <!-- RIGHT MAIN WORKSPACE VIEWPORT -->
+    <div class="dashboard-viewport">
+
+      <!-- Welcome Banner -->
+      <div class="dashboard-welcome-banner">
+        <div class="welcome-text">
+          <h1 class="dashboard-title">System Control Center, <span class="highlight-green" id="adminBannerName">Dhamu (Administrator)</span></h1>
+          <p class="dashboard-subtitle">Admin Workspace &bull; Logged in as: <strong id="adminBannerEmail" class="highlight-green">dhau@gmail.com</strong></p>
+        </div>
+        <button type="button" class="btn btn-solid" onclick="showToast('Property Creator Modal Opened', 'success')">+ Add New Listing</button>
+      </div>
+
+      <!-- Stats Grid -->
+      <div class="dashboard-stats-grid">
+        <div class="dash-stat-card">
+          <div class="dash-stat-icon">📈</div>
+          <div class="dash-stat-info">
+            <h3 class="dash-stat-number">$2.4B</h3>
+            <p class="dash-stat-label">Total Portfolio Value</p>
+          </div>
+        </div>
+
+        <div class="dash-stat-card">
+          <div class="dash-stat-icon">🏡</div>
+          <div class="dash-stat-info">
+            <h3 class="dash-stat-number">48</h3>
+            <p class="dash-stat-label">Active Listed Estates</p>
+          </div>
+        </div>
+
+        <div class="dash-stat-card">
+          <div class="dash-stat-icon">📩</div>
+          <div class="dash-stat-info">
+            <h3 class="dash-stat-number">12</h3>
+            <p class="dash-stat-label">New Client Leads Today</p>
+          </div>
+        </div>
+
+        <div class="dash-stat-card">
+          <div class="dash-stat-icon">👥</div>
+          <div class="dash-stat-info">
+            <h3 class="dash-stat-number">16</h3>
+            <p class="dash-stat-label">Active Advisors</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- TAB 1: SYSTEM OVERVIEW -->
+      <div class="tab-content-panel active" id="admin-tab-overview">
+        <div class="dashboard-panel margin-bottom-md">
+          <div class="panel-header">
+            <h2 class="panel-title">Recent Client Lead Inquiries</h2>
+            <span class="status-tag tag-green">Live System Feed</span>
+          </div>
+
+          <div class="table-responsive">
+            <table class="dash-table">
+              <thead>
+                <tr>
+                  <th>CLIENT NAME</th>
+                  <th>PROPERTY INTEREST</th>
+                  <th>ESTIMATED BUDGET</th>
+                  <th>ASSIGNED ADVISOR</th>
+                  <th>STATUS</th>
+                  <th>ACTION</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Jane Doe</strong><br><small class="text-muted">jane@example.com</small></td>
+                  <td>The Alpine Glass House</td>
+                  <td>$10M - $15M</td>
+                  <td>Eleanor Vance</td>
+                  <td><span class="status-tag tag-green">Confirmed</span></td>
+                  <td><button type="button" class="btn-table-action" onclick="showToast('Viewing details for Jane Doe', 'info')">Review</button></td>
+                </tr>
+                <tr>
+                  <td><strong>Robert Sterling</strong><br><small class="text-muted">robert@sterling.com</small></td>
+                  <td>Skyline Ascent Penthouse</td>
+                  <td>$15M+</td>
+                  <td>Marcus Sterling</td>
+                  <td><span class="status-tag tag-blue">Pending Callback</span></td>
+                  <td><button type="button" class="btn-table-action" onclick="showToast('Assigning advisor for Robert Sterling', 'info')">Assign</button></td>
+                </tr>
+                <tr>
+                  <td><strong>Sophia Martinez</strong><br><small class="text-muted">sophia@martinez.com</small></td>
+                  <td>Pacific Horizon Retreat</td>
+                  <td>$5M - $10M</td>
+                  <td>Julian Reed</td>
+                  <td><span class="status-tag tag-green">In Progress</span></td>
+                  <td><button type="button" class="btn-table-action" onclick="showToast('Reviewing Sophia Martinez file', 'info')">Review</button></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- TAB 2: PORTFOLIO MANAGEMENT -->
+      <div class="tab-content-panel" id="admin-tab-portfolio">
+        <div class="dashboard-panel">
+          <div class="panel-header">
+            <h2 class="panel-title">Estate Portfolio Inventory (48 Properties Listed)</h2>
+            <button type="button" class="btn btn-solid" onclick="showToast('Property Creator Opened', 'success')">+ Create New Listing</button>
+          </div>
+
+          <table class="dash-table">
+            <thead>
+              <tr>
+                <th>ESTATE NAME</th>
+                <th>LOCATION</th>
+                <th>PRICE</th>
+                <th>CATEGORY</th>
+                <th>STATUS</th>
+                <th>ACTION</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>The Alpine Glass House</strong></td>
+                <td>Aspen, CO</td>
+                <td>$14,500,000</td>
+                <td>Mountain Luxury</td>
+                <td><span class="status-tag tag-green">Active Listing</span></td>
+                <td><button type="button" class="btn-table-action" onclick="showToast('Editing Alpine Glass House', 'info')">Edit</button></td>
+              </tr>
+              <tr>
+                <td><strong>Skyline Ascent Penthouse</strong></td>
+                <td>Manhattan, NY</td>
+                <td>$18,900,000</td>
+                <td>Urban Penthouse</td>
+                <td><span class="status-tag tag-green">Active Listing</span></td>
+                <td><button type="button" class="btn-table-action" onclick="showToast('Editing Skyline Penthouse', 'info')">Edit</button></td>
+              </tr>
+              <tr>
+                <td><strong>Pacific Horizon Retreat</strong></td>
+                <td>Malibu, CA</td>
+                <td>$22,000,000</td>
+                <td>Coastal Villa</td>
+                <td><span class="status-tag tag-blue">Under Offer</span></td>
+                <td><button type="button" class="btn-table-action" onclick="showToast('Managing Offer Status', 'info')">Manage</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- TAB 3: LEAD CRM -->
+      <div class="tab-content-panel" id="admin-tab-leads">
+        <div class="dashboard-panel">
+          <div class="panel-header">
+            <h2 class="panel-title">Active Client Lead Pipeline</h2>
+          </div>
+
+          <table class="dash-table">
+            <thead>
+              <tr>
+                <th>LEAD NAME</th>
+                <th>EMAIL</th>
+                <th>PHONE</th>
+                <th>INTEREST</th>
+                <th>STATUS</th>
+                <th>ACTION</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Dhamu (Client)</strong></td>
+                <td>dhau@gmail.com</td>
+                <td>+1 (555) 234-5678</td>
+                <td>Aspen Alpine Glass House</td>
+                <td><span class="status-tag tag-green">Qualified Buyer</span></td>
+                <td><button type="button" class="btn-table-action" onclick="showToast('Opening Dhamu CRM file', 'info')">Open Profile</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- TAB 4: ADVISOR ROSTER -->
+      <div class="tab-content-panel" id="admin-tab-advisors">
+        <div class="dashboard-panel">
+          <div class="panel-header">
+            <h2 class="panel-title">Real Estate Advisor Team Roster</h2>
+            <button type="button" class="btn btn-solid" onclick="showToast('Advisor Registration Modal', 'info')">+ Add Advisor</button>
+          </div>
+
+          <div class="saved-estates-grid">
+            <div class="saved-estate-card">
+              <div class="saved-estate-body">
+                <h3 class="saved-estate-title">Eleanor Vance</h3>
+                <p class="saved-estate-address">Senior Private Client Advisor</p>
+                <p><strong>Active Clients:</strong> 8 &bull; <strong>Closed YTD:</strong> $140M</p>
+                <button type="button" class="btn-table-action margin-top-sm" onclick="showToast('Managing Eleanor Vance profile', 'info')">Manage Advisor</button>
+              </div>
+            </div>
+
+            <div class="saved-estate-card">
+              <div class="saved-estate-body">
+                <h3 class="saved-estate-title">Marcus Sterling</h3>
+                <p class="saved-estate-address">Acquisitions Partner</p>
+                <p><strong>Active Clients:</strong> 5 &bull; <strong>Closed YTD:</strong> $98M</p>
+                <button type="button" class="btn-table-action margin-top-sm" onclick="showToast('Managing Marcus Sterling profile', 'info')">Manage Advisor</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TAB 5: FINANCIALS LEDGER -->
+      <div class="tab-content-panel" id="admin-tab-financials">
+        <div class="dashboard-panel">
+          <div class="panel-header">
+            <h2 class="panel-title">Verified Escrow &amp; Deposit Ledger</h2>
+          </div>
+
+          <table class="dash-table">
+            <thead>
+              <tr>
+                <th>ESTATE</th>
+                <th>CLIENT</th>
+                <th>ESCROW AMOUNT</th>
+                <th>BANK ESCROW REF</th>
+                <th>STATUS</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>The Alpine Glass House</td>
+                <td>Dhamu (dhau@gmail.com)</td>
+                <td><strong>$250,000</strong></td>
+                <td>ESC-994021-JPMorgan</td>
+                <td><span class="status-tag tag-green">Verified &amp; Locked</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- TAB 6: SYSTEM SETTINGS -->
+      <div class="tab-content-panel" id="admin-tab-settings">
+        <div class="dashboard-panel">
+          <div class="panel-header">
+            <h2 class="panel-title">Admin System Settings &amp; Platform Controls</h2>
+          </div>
+
+          <form class="profile-settings-form">
+            <div class="form-row-2">
+              <div class="form-group">
+                <label class="form-label-uppercase">Administrator Name</label>
+                <input type="text" class="auth-input" value="Dhamu" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label-uppercase">Admin Email</label>
+                <input type="email" class="auth-input" value="dhau@gmail.com" required readonly>
+              </div>
+            </div>
+            <button type="button" class="btn btn-solid margin-top-sm" onclick="showToast('System settings updated!', 'success')">Save Admin Configuration</button>
+          </form>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
