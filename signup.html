@@ -34,14 +34,14 @@
 
         <!-- Form Card -->
         <div class="auth-card">
-          <form class="auth-form" id="signupForm">
+          <form class="auth-form" id="signupForm" novalidate>
             <!-- ROLE BASED FIELD -->
             <div class="role-selector-group">
               <label class="form-label-uppercase">Register As</label>
               <div class="role-tabs-container">
                 <button type="button" class="role-tab-btn active" data-role="client">Client</button>
                 <button type="button" class="role-tab-btn" data-role="admin">Admin</button>
-                <input type="hidden" name="user_role" id="signup_user_role" value="client" required>
+                <input type="hidden" name="user_role" id="signup_user_role" value="client">
               </div>
             </div>
 
@@ -126,5 +126,106 @@
   </div>
 
   <script src="script.js"></script>
+
+  <!-- SIGNUP HANDLER: Self-contained, works on file:// AND Live Server -->
+  <script>
+    (function() {
+      var form = document.getElementById('signupForm');
+      if (!form) return;
+
+      // Role tab switcher
+      var roleTabs = form.querySelectorAll('.role-tab-btn');
+      var hiddenRole = document.getElementById('signup_user_role');
+      roleTabs.forEach(function(btn) {
+        btn.addEventListener('click', function() {
+          roleTabs.forEach(function(b) { b.classList.remove('active'); });
+          btn.classList.add('active');
+          if (hiddenRole) hiddenRole.value = btn.getAttribute('data-role');
+        });
+      });
+
+      // Eye toggles
+      form.querySelectorAll('.eye-toggle-btn').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+          var inp = btn.closest('.password-input-wrapper').querySelector('input');
+          inp.type = inp.type === 'password' ? 'text' : 'password';
+        });
+      });
+
+      // Clear red borders on input
+      form.querySelectorAll('input').forEach(function(inp) {
+        inp.addEventListener('input', function() {
+          inp.style.borderColor = '';
+          inp.style.backgroundColor = '';
+        });
+      });
+
+      // Helper: mark field as error
+      function markError(el) {
+        if (!el) return;
+        el.style.borderColor = '#EF4444';
+        el.style.backgroundColor = '#FEF2F2';
+      }
+
+      // SUBMIT HANDLER
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        e.stopImmediatePropagation();
+
+        var nameEl     = form.querySelector('input[type="text"]');
+        var emailEl    = form.querySelector('input[type="email"]');
+        var passwords  = form.querySelectorAll('input[type="password"]');
+        var termsEl    = form.querySelector('input[type="checkbox"]');
+
+        var fullName = nameEl     ? nameEl.value.trim()           : '';
+        var email    = emailEl   ? emailEl.value.trim()           : '';
+        var pass1    = passwords[0] ? passwords[0].value.trim()  : '';
+        var pass2    = passwords[1] ? passwords[1].value.trim()  : '';
+        var agreed   = termsEl   ? termsEl.checked               : false;
+
+        var ok = true;
+
+        // Reset all
+        [nameEl, emailEl, passwords[0], passwords[1]].forEach(function(el) {
+          if (el) { el.style.borderColor = ''; el.style.backgroundColor = ''; }
+        });
+
+        if (!fullName)  { markError(nameEl);       ok = false; }
+        if (!email)     { markError(emailEl);      ok = false; }
+        if (!pass1)     { markError(passwords[0]); ok = false; }
+        if (!pass2)     { markError(passwords[1]); ok = false; }
+
+        if (!ok) {
+          if (typeof showToast === 'function') showToast('Please fill in all required fields.', 'error');
+          return;
+        }
+
+        if (pass1 !== pass2) {
+          markError(passwords[1]);
+          if (typeof showToast === 'function') showToast('Passwords do not match!', 'error');
+          return;
+        }
+
+        if (!agreed) {
+          if (typeof showToast === 'function') showToast('Please agree to the Terms & Privacy Policy.', 'error');
+          return;
+        }
+
+        // Show success banner
+        var banner = document.createElement('div');
+        banner.style.cssText = 'background:#D1FAE5;border:1.5px solid #059669;color:#065F46;padding:14px 18px;border-radius:10px;font-size:14px;font-weight:600;margin-bottom:16px;';
+        banner.textContent = '\u2713 Account created! Welcome, ' + fullName + '. Redirecting to Login...';
+        form.insertBefore(banner, form.firstChild);
+
+        if (typeof showToast === 'function') showToast('Account registered successfully!', 'success');
+
+        // Navigate to login after 800ms
+        setTimeout(function() {
+          window.location.href = 'login.html';
+        }, 800);
+      });
+    })();
+  </script>
+
 </body>
 </html>

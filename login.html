@@ -34,14 +34,14 @@
 
         <!-- Form Card -->
         <div class="auth-card">
-          <form class="auth-form" id="loginForm">
+          <form class="auth-form" id="loginForm" novalidate>
             <!-- ROLE BASED FIELD -->
             <div class="role-selector-group">
               <label class="form-label-uppercase">Account Type</label>
               <div class="role-tabs-container">
                 <button type="button" class="role-tab-btn active" data-role="client">Client</button>
                 <button type="button" class="role-tab-btn" data-role="admin">Admin</button>
-                <input type="hidden" name="user_role" id="login_user_role" value="client" required>
+                <input type="hidden" name="user_role" id="login_user_role" value="client">
               </div>
             </div>
 
@@ -109,5 +109,99 @@
   </div>
 
   <script src="script.js"></script>
+
+  <!-- LOGIN HANDLER: Self-contained, works on file:// AND Live Server -->
+  <script>
+    (function() {
+      var form = document.getElementById('loginForm');
+      if (!form) return;
+
+      // Role tab switcher
+      var roleTabs = form.querySelectorAll('.role-tab-btn');
+      var hiddenRole = document.getElementById('login_user_role');
+      roleTabs.forEach(function(btn) {
+        btn.addEventListener('click', function() {
+          roleTabs.forEach(function(b) { b.classList.remove('active'); });
+          btn.classList.add('active');
+          if (hiddenRole) hiddenRole.value = btn.getAttribute('data-role');
+        });
+      });
+
+      // Eye toggle
+      form.querySelectorAll('.eye-toggle-btn').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+          var inp = btn.closest('.password-input-wrapper').querySelector('input');
+          inp.type = inp.type === 'password' ? 'text' : 'password';
+        });
+      });
+
+      // Clear red border on input
+      form.querySelectorAll('input').forEach(function(inp) {
+        inp.addEventListener('input', function() {
+          inp.style.borderColor = '';
+          inp.style.backgroundColor = '';
+        });
+      });
+
+      // SUBMIT HANDLER
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        e.stopImmediatePropagation();
+
+        var emailEl    = form.querySelector('input[type="email"]');
+        var passwordEl = form.querySelector('input[type="password"]');
+        var email    = emailEl    ? emailEl.value.trim()    : '';
+        var password = passwordEl ? passwordEl.value.trim() : '';
+
+        // Validation
+        var ok = true;
+        if (!email) {
+          emailEl.style.borderColor = '#EF4444';
+          emailEl.style.backgroundColor = '#FEF2F2';
+          ok = false;
+        }
+        if (!password) {
+          passwordEl.style.borderColor = '#EF4444';
+          passwordEl.style.backgroundColor = '#FEF2F2';
+          ok = false;
+        }
+        if (!ok) {
+          if (typeof showToast === 'function') showToast('Please enter your email and password.', 'error');
+          return;
+        }
+
+        // Get role
+        var activeBtn = form.querySelector('.role-tab-btn.active');
+        var role = activeBtn ? (activeBtn.getAttribute('data-role') || 'client') : 'client';
+        role = role.toLowerCase();
+
+        // Build name from email
+        var username = email.split('@')[0];
+        var name = username.charAt(0).toUpperCase() + username.slice(1);
+        if (role === 'admin') name = name + ' (Administrator)';
+
+        // Save to localStorage
+        localStorage.setItem('loggedInUser', JSON.stringify({ name: name, email: email, role: role }));
+
+        // Target dashboard
+        var target = role === 'admin' ? 'admin-dashboard.html' : 'client-dashboard.html';
+
+        // Show success banner inside form
+        var banner = document.createElement('div');
+        banner.style.cssText = 'background:#D1FAE5;border:1.5px solid #059669;color:#065F46;padding:14px 18px;border-radius:10px;font-size:14px;font-weight:600;margin-bottom:16px;';
+        banner.textContent = '\u2713 Login Successful! Redirecting to ' + role.toUpperCase() + ' Dashboard...';
+        form.insertBefore(banner, form.firstChild);
+
+        // Toast
+        if (typeof showToast === 'function') showToast('Welcome back, ' + name + '!', 'success');
+
+        // Navigate after 600ms
+        setTimeout(function() {
+          window.location.href = target;
+        }, 600);
+      });
+    })();
+  </script>
+
 </body>
 </html>
